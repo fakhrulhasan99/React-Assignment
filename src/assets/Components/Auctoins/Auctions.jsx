@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Auction from '../Auction/Auction';
 
-const Auctions = (handleFavourite) => {
+const Auctions = ({handleFavourite}) => {
 
     const [auctions, setAuctions] = useState([]);
 

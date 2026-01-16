@@ -5,15 +5,15 @@ import Auctions from './assets/Components/Auctoins/Auctions'
 import Banner from './assets/Components/Banner/Banner'
 import Navbar from './assets/Components/Navbar/Navbar'
 import { VscHeart } from "react-icons/vsc";
+import { useState } from 'react';
 
 function App() {
 
-  const [favourite, setFavourite] = ([]);
+  const [favourite, setFavourite] = useState([]);
 
   const handleFavourite = (auction) => {
     setFavourite([...favourite, auction])
   };
-  console.log(favourite)
 
   return (
     <>
