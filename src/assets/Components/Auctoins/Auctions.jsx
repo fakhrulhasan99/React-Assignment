@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Auction from '../Auction/Auction';
 
-const Auctions = () => {
+const Auctions = (handleFavourite) => {
 
     const [auctions, setAuctions] = useState([]);
 
@@ -13,11 +13,8 @@ const Auctions = () => {
 
     return (
         <div className=''>
-            <div className="text-left">
-                <h2 className=' text-3xl font-bold'>Active Auctions : {auctions.length}</h2>
-                <h3 className=' text-2xl'>Discover and bid on extraordinary items</h3>
-            </div>
-            <div className="bg-white rounded-2xl mt-6">
+            
+            <div className="bg-white rounded-2xl">
                 <div>
                     <table className='table'>
                         <thead>
@@ -32,7 +29,8 @@ const Auctions = () => {
                         {
                             auctions.map((auction) => <Auction
                                 key={auction.id}
-                                auction={auction}>
+                                auction={auction} 
+                                handleFavourite={handleFavourite}>
 
                             </Auction>)
                         }
