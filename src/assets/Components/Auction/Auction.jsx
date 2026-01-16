@@ -1,10 +1,17 @@
 import React from 'react';
 
-const Auction = ({auction}) => {
-    console.log(auction)
+const Auction = ({ auction }) => {
+
     return (
-        <div>
-        </div>
+        <tbody>
+            <tr>
+                <td><img src={auction.image} alt="" className='h-16 w-16 rounded-xl' /></td>
+                <td>{auction.title}</td>
+                <td>{auction.currentBidPrice} $</td>
+                <td>{auction.timeLeft}</td>
+                <td><button className='btn'></button></td>
+            </tr>
+        </tbody>
     );
 };
 
