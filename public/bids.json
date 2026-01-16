@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Leica M3 Camera",
+    "description": "Iconic 35mm rangefinder camera produced in the 1950s–60s, highly sought after by collectors.",
+    "currentBidPrice": 300,
+    "timeLeft": "1d 4h",
+    "bidsCount": 18,
+    "image": "https://i.ibb.co.com/jvd8RgS0/Bid1-min.png"
+  },
+  {
+    "id": 2,
+    "title": "1965 Gibson SG Standard Electric Guitar",
+    "description": "Original 1965 Gibson SG Standard with classic cherry finish and P-90 pickups.",
+    "currentBidPrice": 200,
+    "timeLeft": "2d 6h",
+    "bidsCount": 27,
+    "image": "https://i.ibb.co.com/0VyL5BSy/Bid2-min.png"
+  },
+  {
+    "id": 3,
+    "title": "Original Apple Macintosh 128K (1984)",
+    "description": "First-generation Apple Macintosh computer, a milestone in personal computing history.",
+    "currentBidPrice": 1550,
+    "timeLeft": "12h 20m",
+    "bidsCount": 34,
+    "image": "https://i.ibb.co.com/RpXzN5fN/Bid3-min.png"
+  },
+  {
+    "id": 4,
+    "title": "Rolex Submariner 16610",
+    "description": "Classic stainless steel Rolex Submariner reference 16610 with automatic movement.",
+    "currentBidPrice": 5500,
+    "timeLeft": "3d 2h",
+    "bidsCount": 21,
+    "image": "https://i.ibb.co.com/k2hB0Mn1/Bid4-min.png"
+  },
+  {
+    "id": 5,
+    "title": "First Edition 'The Great Gatsby' by F. Scott Fitzgerald",
+    "description": "Rare first edition copy of the 1925 novel, a cornerstone of American literature.",
+    "currentBidPrice": 200,
+    "timeLeft": "5d 8h",
+    "bidsCount": 9,
+    "image": "https://i.ibb.co.com/pvCYWkBs/Bid5-min.png"
+  },
+  {
+    "id": 6,
+    "title": "Mid-Century Modern Eames Lounge Chair",
+    "description": "Authentic Eames Lounge Chair with ottoman, an enduring symbol of modern design.",
+    "currentBidPrice": 50,
+    "timeLeft": "1d 18h",
+    "bidsCount": 16,
+    "image": "https://i.ibb.co.com/jvjzM0BT/Bid6-min.png"
+  },
+  {
+    "id": 7,
+    "title": "Banksy Original Screen Print",
+    "description": "Authentic limited-edition screen print by Banksy, accompanied by provenance documentation.",
+    "currentBidPrice": 2850,
+    "timeLeft": "4d 12h",
+    "bidsCount": 12,
+    "image": "https://i.ibb.co.com/Df8y1Gt3/Bid7-min.png"
+  }
+]
