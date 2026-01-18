@@ -12,7 +12,13 @@ function App() {
   const [favourites, setFavourites] = useState([]);
 
   const handleFavourite = (auction) => {
-    setFavourites([...favourites, auction])
+    setFavourites(favourites => {
+      const exfavs = favourites.some(exfav => exfav.id === auction.id);
+      if (exfavs) {
+        return favourites;
+      }
+      return [...favourites, auction];
+    })
   };
 
   return (
