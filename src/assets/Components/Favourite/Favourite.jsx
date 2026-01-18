@@ -1,12 +1,12 @@
 import React from 'react';
 import { RxCrossCircled } from "react-icons/rx";
 
-const Favourite = ({ favourite }) => {
+const Favourite = ({favourites}) => {
     return (
         <div>
             {
-                favourite.map(favourite =>
-                    <div className=" bg-base-100">
+                favourites.map(favourite =>
+                    <div className=" bg-base-100" key={favourite.id}>
                         <div className="card-body border-y border-slate-200 p-2">
                             <div className="flex justify-between ">
                                 <img className='h-12 w-12 rounded-sm' src={favourite.image} alt="" />

@@ -10,6 +10,7 @@ import Favourites from './assets/Components/Favourites/Favourites';
 function App() {
 
   const [favourites, setFavourites] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const handleFavourite = (auction) => {
     setFavourites(favourites => {
@@ -20,6 +21,15 @@ function App() {
       return [...favourites, auction];
     })
   };
+  const handleTotalAmount = (auction) => {
+    setTotalAmount(totalAmount => {
+      const exfavs = favourites.some(exfav => exfav.id === auction.id);
+      if (exfavs) {
+        return totalAmount;
+      }
+      return totalAmount+auction.currentBidPrice;
+    })
+  }  
 
   return (
     <>
@@ -34,12 +44,12 @@ function App() {
         <div className="flex text-center gap-2 bg-slate-300 p-6">
           {/* left container */}
           <div className="w-[60%] ">
-            <Auctions handleFavourite={handleFavourite} favourites={favourites}></Auctions>
+            <Auctions handleFavourite={handleFavourite} handleTotalAmount={handleTotalAmount} favourites={favourites}></Auctions>
 
           </div>
           {/* right container */}
           <div className="w-[40%]">
-            <Favourites favourites={favourites} key={favourites.id}></Favourites>
+            <Favourites favourites={favourites} totalAmount={totalAmount} key={favourites.id}></Favourites>
           </div>
         </div>
       </div>
