@@ -7,6 +7,7 @@ import Navbar from './assets/Components/Navbar/Navbar'
 import { useState } from 'react';
 import Favourites from './assets/Components/Favourites/Favourites';
 import Footer from './assets/Components/Footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
 
@@ -14,32 +15,38 @@ function App() {
   const [totalAmount, setTotalAmount] = useState(0);
 
   const handleFavourite = (auction) => {
-    setFavourites(favourites => {
-      const exfavs = favourites.some(exfav => exfav.id === auction.id);
-      if (exfavs) {
-        return favourites;
-      }
-      return [...favourites, auction];
-    })
-    handleTotalAmount(auction)
+    const alreadyExists = favourites.some(
+      fav => fav.id === auction.id
+    );
+
+    if (alreadyExists) {
+      handleInfo();
+      return;
+    }
+
+    setFavourites(prev => [...prev, auction]);
+    setTotalAmount(prev => prev + auction.currentBidPrice);
+
+    handleAdd();
   };
-  const handleTotalAmount = (auction) => {
-    setTotalAmount(totalAmount => {
-      const exfavs = favourites.some(exfav => exfav.id === auction.id);
-      if (exfavs) {
-        return totalAmount;
-      }
-      return totalAmount + auction.currentBidPrice;
-    })
-  };
+
   const handleRemoveFavourite = (favourite) => {
-    const remainingFavs = favourites.filter((cross)=> cross.id !== favourite.id);
+    const remainingFavs = favourites.filter((cross) => cross.id !== favourite.id);
     setFavourites(remainingFavs)
     handleRemoveAmount(favourite)
   }
   const handleRemoveAmount = (favourite) => {
-    setTotalAmount(totalAmount-favourite.currentBidPrice);
+    setTotalAmount(totalAmount - favourite.currentBidPrice);
   }
+  const handleAdd = () => {
+    toast.success("Item Added to your Favourite lists ❤️");
+  };
+  const handleInfo = () => {
+    toast.info("Item already added to favourites ⚠️");
+  }
+  const handleRemove = () => {
+    toast.warning("Item Removed from your Favourite lists 🗑️");
+  };
 
   return (
     <>
@@ -54,7 +61,9 @@ function App() {
         <div className="flex text-center gap-2 bg-slate-300 p-6">
           {/* left container */}
           <div className="w-[60%] ">
-            <Auctions handleFavourite={handleFavourite} favourites={favourites}></Auctions>
+            <Auctions handleFavourite={handleFavourite}
+              favourites={favourites}
+            ></Auctions>
 
           </div>
           {/* right container */}
@@ -62,10 +71,12 @@ function App() {
             <Favourites favourites={favourites}
               totalAmount={totalAmount}
               key={favourites.id}
-              handleRemoveFavourite={handleRemoveFavourite}></Favourites>
+              handleRemoveFavourite={handleRemoveFavourite}
+              handleRemove={handleRemove}></Favourites>
           </div>
         </div>
         <Footer></Footer>
+        <ToastContainer />
       </div>
     </>
   )

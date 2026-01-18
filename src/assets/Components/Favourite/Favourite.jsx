@@ -1,7 +1,11 @@
 import React from 'react';
 import { RxCrossCircled } from "react-icons/rx";
 
-const Favourite = ({ favourites, handleRemoveFavourite }) => {
+
+const Favourite = ({ favourites, handleRemoveFavourite, handleRemove }) => {
+
+    
+
     return (
         <div>
             {
@@ -18,7 +22,10 @@ const Favourite = ({ favourites, handleRemoveFavourite }) => {
                                     </div>
                                 </div>
                                 <button
-                                    onClick={() => handleRemoveFavourite(favourite)} className="cursor-pointer">
+                                    onClick={() => {
+                                        handleRemoveFavourite(favourite);
+                                        handleRemove();
+                                        }} className="cursor-pointer">
                                     <RxCrossCircled size={20} />
                                 </button>
                             </div>

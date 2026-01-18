@@ -28,7 +28,8 @@ const Auctions = ({ handleFavourite, favourites }) => {
                         key={auction.id}
                         auction={auction}
                         handleFavourite={handleFavourite}
-                        favourites={favourites}
+                        favourites={favourites} 
+                        
                     >
 
                     </Auction>)
