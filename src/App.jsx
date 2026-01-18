@@ -28,12 +28,12 @@ function App() {
         <div className="flex text-center gap-2 bg-slate-300 p-6">
           {/* left container */}
           <div className="w-[60%] ">
-            <Auctions handleFavourite={handleFavourite}></Auctions>
+            <Auctions handleFavourite={handleFavourite} favourites={favourites}></Auctions>
 
           </div>
           {/* right container */}
           <div className="w-[40%]">
-            <Favourites favourites={favourites}></Favourites>
+            <Favourites favourites={favourites} key={favourites.id}></Favourites>
           </div>
         </div>
       </div>

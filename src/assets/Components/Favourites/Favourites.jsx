@@ -10,9 +10,13 @@ const Favourites = ({ favourites }) => {
             <div className='flex items-center justify-center py-6 gap-3'>
                 <VscHeart size={20} />
                 <h2 className='text-2xl font-bold'>Favourite Items</h2>
+                <VscHeart size={20} />
             </div>
-            <Favourite favourite={favourites}></Favourite>
-            <Empty></Empty>
+            {
+                favourites.length === 0 ?
+                <Empty></Empty> :
+                <Favourite favourite={favourites}></Favourite>
+            }
 
             <div className='flex justify-around text-xl pb-3'>
                 <h3>Total Bids Amount</h3>

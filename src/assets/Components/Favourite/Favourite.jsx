@@ -18,7 +18,7 @@ const Favourite = ({ favourite }) => {
                                     </div>
                                 </div>
                                 <button className="cursor-pointer">
-                                    <RxCrossCircled />
+                                    <RxCrossCircled size={20}/>
                                 </button>
                             </div>
                         </div>

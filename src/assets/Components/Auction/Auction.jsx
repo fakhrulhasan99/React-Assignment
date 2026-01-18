@@ -2,8 +2,10 @@ import React from 'react';
 import { VscHeart } from "react-icons/vsc";
 import { VscHeartFilled } from "react-icons/vsc";
 
-const Auction = ({ auction, handleFavourite }) => {
-    
+const Auction = ({ auction, handleFavourite, favourites }) => {
+    const isFavourite = favourites.some(
+        fav => fav.id === auction.id
+    )
     return (
         <tbody>
             <tr>
@@ -11,7 +13,10 @@ const Auction = ({ auction, handleFavourite }) => {
                 <td>{auction.title}</td>
                 <td>{auction.currentBidPrice} $</td>
                 <td>{auction.timeLeft}</td>
-                <td><button onClick={()=>handleFavourite(auction)} className=' cursor-pointer text-red-400'> <VscHeartFilled size={20}/>
+                <td><button onClick={()=>handleFavourite(auction)} className=' cursor-pointer text-red-400'> 
+                    {
+                        isFavourite ? <VscHeartFilled size={20}/> : <VscHeart size={20}/>
+                    }
                 </button></td>
             </tr>
         </tbody>

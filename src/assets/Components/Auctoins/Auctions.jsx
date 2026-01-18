@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Auction from '../Auction/Auction';
 
-const Auctions = ({handleFavourite}) => {
+const Auctions = ({handleFavourite, favourites}) => {
 
     const [auctions, setAuctions] = useState([]);
 
@@ -30,7 +30,8 @@ const Auctions = ({handleFavourite}) => {
                             auctions.map((auction) => <Auction
                                 key={auction.id}
                                 auction={auction} 
-                                handleFavourite={handleFavourite}>
+                                handleFavourite={handleFavourite} 
+                                favourites={favourites}>
 
                             </Auction>)
                         }
