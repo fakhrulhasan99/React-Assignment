@@ -20,6 +20,7 @@ function App() {
       }
       return [...favourites, auction];
     })
+    handleTotalAmount(auction)
   };
   const handleTotalAmount = (auction) => {
     setTotalAmount(totalAmount => {
@@ -27,9 +28,13 @@ function App() {
       if (exfavs) {
         return totalAmount;
       }
-      return totalAmount+auction.currentBidPrice;
+      return totalAmount + auction.currentBidPrice;
     })
-  }  
+  };
+  const handleRemoveFavourite = (id) => {
+    const remainingFavs = favourites.filter((cross)=> cross.id !== id);
+    setFavourites(remainingFavs)
+  }
 
   return (
     <>
@@ -44,12 +49,15 @@ function App() {
         <div className="flex text-center gap-2 bg-slate-300 p-6">
           {/* left container */}
           <div className="w-[60%] ">
-            <Auctions handleFavourite={handleFavourite} handleTotalAmount={handleTotalAmount} favourites={favourites}></Auctions>
+            <Auctions handleFavourite={handleFavourite} favourites={favourites}></Auctions>
 
           </div>
           {/* right container */}
           <div className="w-[40%]">
-            <Favourites favourites={favourites} totalAmount={totalAmount} key={favourites.id}></Favourites>
+            <Favourites favourites={favourites}
+              totalAmount={totalAmount}
+              key={favourites.id}
+              handleRemoveFavourite={handleRemoveFavourite}></Favourites>
           </div>
         </div>
       </div>

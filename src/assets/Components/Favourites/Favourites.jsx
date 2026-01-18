@@ -3,7 +3,7 @@ import { VscHeart } from "react-icons/vsc";
 import Empty from '../Empty/Empty';
 import Favourite from '../Favourite/Favourite';
 
-const Favourites = ({favourites, totalAmount}) => {
+const Favourites = ({ favourites, totalAmount, handleRemoveFavourite }) => {
 
     return (
         <div className='bg-white rounded-2xl'>
@@ -14,8 +14,9 @@ const Favourites = ({favourites, totalAmount}) => {
             </div>
             {
                 favourites.length === 0 ?
-                <Empty></Empty> :
-                <Favourite favourites={favourites} ></Favourite>
+                    <Empty></Empty> :
+                    <Favourite favourites={favourites}
+                        handleRemoveFavourite={handleRemoveFavourite}></Favourite>
             }
 
             <div className='flex justify-around text-xl pb-3'>
