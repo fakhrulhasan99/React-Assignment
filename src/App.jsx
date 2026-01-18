@@ -6,6 +6,7 @@ import Banner from './assets/Components/Banner/Banner'
 import Navbar from './assets/Components/Navbar/Navbar'
 import { useState } from 'react';
 import Favourites from './assets/Components/Favourites/Favourites';
+import Footer from './assets/Components/Footer/Footer';
 
 function App() {
 
@@ -31,9 +32,13 @@ function App() {
       return totalAmount + auction.currentBidPrice;
     })
   };
-  const handleRemoveFavourite = (id) => {
-    const remainingFavs = favourites.filter((cross)=> cross.id !== id);
+  const handleRemoveFavourite = (favourite) => {
+    const remainingFavs = favourites.filter((cross)=> cross.id !== favourite.id);
     setFavourites(remainingFavs)
+    handleRemoveAmount(favourite)
+  }
+  const handleRemoveAmount = (favourite) => {
+    setTotalAmount(totalAmount-favourite.currentBidPrice);
   }
 
   return (
@@ -60,6 +65,7 @@ function App() {
               handleRemoveFavourite={handleRemoveFavourite}></Favourites>
           </div>
         </div>
+        <Footer></Footer>
       </div>
     </>
   )

@@ -16,7 +16,7 @@ const Auction = ({ auction, handleFavourite, favourites }) => {
                 <td>{auction.timeLeft}</td>
                 <td><button onClick={() => handleFavourite(auction)} className={` cursor-pointer`}>
                     {
-                        isFavourite ? <VscHeartFilled size={20} className=' text-red-400' /> : <VscHeart size={20} />
+                        isFavourite ? <VscHeartFilled size={20} className=' text-red-400 cursor-not-allowed' /> : <VscHeart size={20} />
                     }
                 </button></td>
             </tr>

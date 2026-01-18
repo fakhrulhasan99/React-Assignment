@@ -18,7 +18,7 @@ const Favourite = ({ favourites, handleRemoveFavourite }) => {
                                     </div>
                                 </div>
                                 <button
-                                    onClick={() => handleRemoveFavourite(favourite.id)} className="cursor-pointer">
+                                    onClick={() => handleRemoveFavourite(favourite)} className="cursor-pointer">
                                     <RxCrossCircled size={20} />
                                 </button>
                             </div>
