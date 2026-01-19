@@ -55,7 +55,7 @@ function App() {
         <Banner></Banner>
         <div className="text-left bg-slate-300 pt-6 px-6">
           <h2 className=' text-3xl font-bold'>Active Auctions</h2>
-          <h3 className=' text-2xl'>Discover and bid on extraordinary items</h3>
+          <h3 className=' text-lg'>Discover and bid on extraordinary items</h3>
         </div>
 
         <div className="flex text-center gap-2 bg-slate-300 p-6">
